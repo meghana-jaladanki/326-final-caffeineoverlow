@@ -1,0 +1,67 @@
+.navbar {
+    background-color:#a445b2;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #f2f2f2;
+  }
+
+  /* Style the links inside the navigation bar */
+  .navbar a {
+    color: #f2f2f2;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 20%;
+  }
+
+  /* Change the color of links on hover */
+  .navbar a:hover {
+    background-color: #c877d4;
+    color: black;
+    border-radius: 8px;
+  }
+
+  /* Adding an active class to highlight the current page */
+  .navbar a.active {
+    background-color: #c877d4;
+    color: white;
+  }
+
+  /* Adding CSS for navbar logo */
+  .logo {
+    display: block;
+    margin: auto;
+  }
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+  }
+
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
