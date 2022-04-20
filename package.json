@@ -1,0 +1,28 @@
+{
+  "name": "326-final-caffeineoverlow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meghana-jaladanki/326-final-caffeineoverlow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meghana-jaladanki/326-final-caffeineoverlow/issues"
+  },
+  "homepage": "https://github.com/meghana-jaladanki/326-final-caffeineoverlow#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
