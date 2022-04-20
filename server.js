@@ -18,23 +18,23 @@ data = JSON.parse(fs.readFileSync(filename));
 
 // READ Endpoints
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve('./client/login.html'));
+  res.sendFile(path.resolve('./client/html/login.html'));
 })
 
 app.get('/login', (req, res) => {
-  res.sendFile(path.resolve('./client/menu.html'));
+  res.sendFile(path.resolve('./client/html/menu.html'));
 })
 
 app.get('/menu', (req, res) => {
-  res.sendFile(path.resolve('./client/menu.html'));
+  res.sendFile(path.resolve('./client/html/menu.html'));
 })
 
 app.get('/orders', (req, res) => {
-  res.sendFile(path.resolve('./client/orders.html'));
+  res.sendFile(path.resolve('./client/html/orders.html'));
 })
 
 app.get('/options', (req, res) => {
-  res.sendFile(path.resolve('./client/options.html'));
+  res.sendFile(path.resolve('./client/html/options.html'));
 })
 
 app.get('/drink/view', (req, res) => {
@@ -61,12 +61,12 @@ app.get('/orders/view', (req, res) => {
 
 app.get('/login', (req, res) => {
   console.log("Able to login!");
-  res.sendFile(path.resolve('./client/menu.html'));
+  res.sendFile(path.resolve('./client/html/menu.html'));
 });  
 
 app.get('/logout', (req, res) => {
   console.log("Able to logout!");
-  res.sendFile(path.resolve('./client/login.html'));
+  res.sendFile(path.resolve('./client/html/login.html'));
 }); 
 
 // CREATE Endpoints
