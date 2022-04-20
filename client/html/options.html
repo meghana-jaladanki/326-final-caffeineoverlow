@@ -1,182 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Caffeine Overflow</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/options.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </head>
-  <body>
-    <div class="navbar">
-      <a id="account">Account</a>
-      <a id="menu">Menu</a>
-      <a id="cart">Cart</a>
-      <a id="orderStatus">Order Status</a>
-    </div>
-    <h2 class="title">Latte</h2>
-    <div class="line"></div>
-    <div class="choices">
-      <!-- Dairy Options -->
-      <h3>Dairy</h3>
-      <div class="option-choices">
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >Whole Milk</label
-          >
-        </div>
 
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked">2% Milk</label>
-        </div>
+<head>
+  <title>Caffeine Overflow</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/options.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked"
-            >Oat Milk</label
-          >
-        </div>
-
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked"
-            >Almond Milk</label
-          >
-        </div>
-
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked"
-            >Coconut Milk</label
-          >
-        </div>
-      </div>
-      <!-- Espresso Options -->
-      <h3>Espresso</h3>
-
-      <div class="option-choices">
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked"
-            >1 extra shot</label
-          >
-        </div>
-
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked">None</label>
-        </div>
+<body>
+  <div class="navbar">
+    <a id="menu" href="../html/menu.html">Menu</a>
+    <a id="order" href="../html/orders.html">Order</a>
+    <a id="contact" href="../html/contact.html">Contact</a>
+    <a id="logout" href="../html/login.html">Logout</a>
+  </div>
+  <h2 class="title">Additions</h2>
+  <div class="line"></div>
+  <div class="choices">
+    <!-- Dairy Options -->
+    <h3>Dairy</h3>
+    <div class="option-choices">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+        <label class="form-check-label" for="flexCheckDefault">Whole Milk</label>
       </div>
 
-      <!-- Sweetener -->
-      <div class="option-choices">
-        <h3>Sweetener</h3>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">2% Milk</label>
+      </div>
 
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked"
-            >White Sugar</label
-          >
-        </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">Oat Milk</label>
+      </div>
 
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked"
-            >Brown Sugar</label
-          >
-        </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">Almond Milk</label>
+      </div>
 
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked"
-            >Liquid Sugar</label
-          >
-        </div>
-
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked">Stevia</label>
-        </div>
-
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked"
-            >Maple Syrup</label
-          >
-        </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">Coconut Milk</label>
       </div>
     </div>
-  </body>
+    <!-- Espresso Options -->
+    <h3>Espresso</h3>
+
+    <div class="option-choices">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">1 extra shot</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">None</label>
+      </div>
+    </div>
+
+    <!-- Sweetener -->
+    <div class="option-choices">
+      <h3>Sweetener</h3>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">White Sugar</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">Brown Sugar</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">Liquid Sugar</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">Stevia</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
+        <label class="form-check-label" for="flexCheckChecked">Maple Syrup</label>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
