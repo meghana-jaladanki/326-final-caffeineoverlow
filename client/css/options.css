@@ -1,3 +1,61 @@
+/* Options styling beging here */
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card {
+    width: max-content;
+    padding: 3vh 5vw;
+    margin: 0 auto;
+    margin-top: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-img{
+   max-width: 100%;
+   max-height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    padding-bottom: 30px;
+    gap: 25px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 11vw;
+    object-fit: cover;
+    padding-bottom: 0%;
+}
+
+.card-title {
+  font-size: 24px;
+}
+
+.form-check-label {
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.btn {
+  transition-duration: 0.1s;
+  background-color: #a445b2;
+  border-radius:45px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  float: right;
+  font-size: 20px;
+}
+
 /* Adding a background color to the top navigation */
 .navbar {
   background-color: #a445b2;
