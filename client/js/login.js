@@ -34,14 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
-
-
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
 
+    inputElement.addEventListener("input", e => {
+        clearInputError(inputElement);
+    });
 
-        inputElement.addEventListener("input", e => {
-            clearInputError(inputElement);
-        });
-   
 });

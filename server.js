@@ -76,6 +76,7 @@ app.post('/drink/new', (req, res) => {
   let drinkVal = JSON.stringify(data);
   fs.writeFileSync(filename, drinkVal);
   console.log("A new drink was created!");
+  res.sendStatus(200);
 });
 
 app.post('/user/new', (req, res) => {
@@ -84,6 +85,7 @@ app.post('/user/new', (req, res) => {
   let userVal = JSON.stringify(data);
   fs.writeFileSync(filename, userVal);
   console.log("A new user account was created!");
+  res.sendStatus(200);
 });
 
 app.post('/orders/new', (req, res) => {
@@ -92,6 +94,7 @@ app.post('/orders/new', (req, res) => {
   let ordersVal = JSON.stringify(data);
   fs.writeFileSync(filename, ordersVal);
   console.log("A new order was created!");
+  res.sendStatus(200);
 });
 
 // UPDATE Endpoints
