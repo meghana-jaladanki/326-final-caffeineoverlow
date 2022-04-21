@@ -1,7 +1,7 @@
-'use strict'
-const express = require('express');
-let fs = require('fs');
-const path = require('path');
+"use strict";
+const express = require("express");
+let fs = require("fs");
+const path = require("path");
 
 const app = express();
 const port = 3000;
@@ -10,67 +10,75 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static('client/'));
+app.use(express.static("client/"));
 
 let data = {};
-let filename = 'data.json';
+let filename = "data.json";
+let userID = 0;
 data = JSON.parse(fs.readFileSync(filename));
 
 // READ Endpoints
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve('./client/html/login.html'));
-})
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/html/login.html"));
+});
 
-app.get('/login', (req, res) => {
-  res.sendFile(path.resolve('./client/html/menu.html'));
-})
+app.get("/menu", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/html/menu.html"));
+});
 
-app.get('/menu', (req, res) => {
-  res.sendFile(path.resolve('./client/html/menu.html'));
-})
+app.get("/orders", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/html/orders.html"));
+});
 
-app.get('/orders', (req, res) => {
-  res.sendFile(path.resolve('./client/html/orders.html'));
-})
+app.get("/options", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/html/options.html"));
+});
 
-app.get('/options', (req, res) => {
-  res.sendFile(path.resolve('./client/html/options.html'));
-})
-
-app.get('/drink/view', (req, res) => {
+app.get("/drink/view", (req, res) => {
   const drinkVal = req.query["ID"];
-  for(let i = 0 ; i < data["drink"].length; ++i){
-    if(drinkVal === JSON.stringify(data["drink"][i].ID)){
-        console.log(data["drink"][i]);
-        res.send(data["drink"][i]);
-      }
+  for (let i = 0; i < data["drink"].length; ++i) {
+    if (drinkVal === JSON.stringify(data["drink"][i].ID)) {
+      console.log(data["drink"][i]);
+      res.send(data["drink"][i]);
     }
-    res.send();
+  }
+  res.send();
 });
 
-app.get('/orders/view', (req, res) => {
+app.get("/orders/view", (req, res) => {
   const orderVal = req.query["ID"];
-  for(let i = 0 ; i < data["orders"].length; ++i){
-    if(orderVal === JSON.stringify(data["orders"][i].ID)){
-        console.log(data["orders"][i]);
-        res.send(data["orders"][i]);
-      }
+  for (let i = 0; i < data["orders"].length; ++i) {
+    if (orderVal === JSON.stringify(data["orders"][i].ID)) {
+      console.log(data["orders"][i]);
+      res.send(data["orders"][i]);
     }
-    res.send();
+  }
+  res.send();
 });
 
-app.get('/login', (req, res) => {
-  console.log("Able to login!");
-  res.sendFile(path.resolve('./client/html/menu.html'));
-});  
+app.get("/login", (req, res) => {
+  res.send(JSON.stringify({ userID: userID }));
+});
 
-app.get('/logout', (req, res) => {
+app.get("/logout", (req, res) => {
   console.log("Able to logout!");
-  res.sendFile(path.resolve('./client/html/login.html'));
-}); 
+  res.redirect("/");
+});
+
+app.post("/signup", (req, res) => {
+  // Create a new user account
+  let user = req.body.user;
+  user["userID"] = userID;
+  userID++;
+  data["user"].push(req.body.user);
+  let userVal = JSON.stringify(data);
+  fs.writeFileSync(filename, userVal);
+  console.log("A new user account was created!");
+  res.send(JSON.stringify({ userID: userID }));
+});
 
 // CREATE Endpoints
-app.post('/drink/new', (req, res) => {
+app.post("/drink/new", (req, res) => {
   // Create a new drink
   data["drink"].push(req.body.drink);
   let drinkVal = JSON.stringify(data);
@@ -79,7 +87,7 @@ app.post('/drink/new', (req, res) => {
   res.sendStatus(200);
 });
 
-app.post('/user/new', (req, res) => {
+app.post("/user/new", (req, res) => {
   // Create a new user account
   data["user"].push(req.body.user);
   let userVal = JSON.stringify(data);
@@ -88,7 +96,7 @@ app.post('/user/new', (req, res) => {
   res.sendStatus(200);
 });
 
-app.post('/orders/new', (req, res) => {
+app.post("/orders/new", (req, res) => {
   // Create a new order
   data["orders"].push(req.body.orders);
   let ordersVal = JSON.stringify(data);
@@ -98,13 +106,13 @@ app.post('/orders/new', (req, res) => {
 });
 
 // UPDATE Endpoints
-app.get('/orders/update', (req, res) => {
+app.get("/orders/update", (req, res) => {
   console.log("Order info has been updated!");
   res.send();
 });
 
 // DELETE Endpoints
-app.delete('/orders/:ID', (req, res, next) => {
+app.delete("/orders/:ID", (req, res, next) => {
   const delIndex = getIndexById(req.params.id, expressions);
   if (delIndex !== -1) {
     expressions.splice(delIndex, 1);
@@ -114,7 +122,7 @@ app.delete('/orders/:ID', (req, res, next) => {
   }
 });
 
-app.delete('/user/:ID', (req, res, next) => {
+app.delete("/user/:ID", (req, res, next) => {
   const delIndex = getIndexById(req.params.id, expressions);
   if (delIndex !== -1) {
     expressions.splice(delIndex, 1);
@@ -124,9 +132,9 @@ app.delete('/user/:ID', (req, res, next) => {
   }
 });
 
-app.get('*', (req, res) => {
+app.get("*", (req, res) => {
   console.log(req.path);
-  res.status(404).json({ message: 'Unknown Request' });
+  res.status(404).json({ message: "Unknown Request" });
 });
 
 app.listen(port, () => {
