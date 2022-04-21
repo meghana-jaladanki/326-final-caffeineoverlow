@@ -81,7 +81,9 @@ We would like to include a payment option where students will be able to pay usi
 ## Team Contributions:
 
 Meghana Jaladanki
--
+- Worked on client side log-in page
+- Worked on redesigning layout of application 
+- Wroked on creating endpoints and data objects 
 
 Rinija Raja
 - Created the endpoints and data objects
