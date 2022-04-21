@@ -43,12 +43,40 @@ DELETE
 ## Front-end Implementation:
 
 1) Login 
+
 This is our application’s login screen, where users also have the option to sign up if they do not have an account yet. Once users sign in, they can proceed to place their order. We will be creating the user object here and we will be saving their email and password in order to create an account for them. 
+
+![image](https://user-images.githubusercontent.com/73535868/164343491-9a5a2399-10e1-4db6-83a6-9bfc7b9f7004.png)
+
+2) Menu
+
+This menu screen displays the different drink options that users can choose from. Each drink option includes an image, price, description, and order button. Once the user clicks the order button, then will be directed to the options page where they can specify their order. 
+
+![image](https://user-images.githubusercontent.com/73535868/164344092-b192b9b4-c79a-4545-b4d8-adb3192ea415.png)
+
+![image](https://user-images.githubusercontent.com/73535868/164344208-9f7f10eb-e110-47c3-880a-9847a32b7768.png)
+
+![image](https://user-images.githubusercontent.com/73535868/164344140-3aee076b-2c5c-43fe-880f-a09424ed1680.png)
+
+3) Options 
+
+This is our options screen and it will allow users to select the additional things that they would like to add to their drink. They can select their dairy, espresso shots, flavor shots, and sweetener. Once a user specifies these values, a drink object will be populated with the specifications. The user will then be able to place an order with the drink they created. 
+
+![image](https://user-images.githubusercontent.com/73535868/164343737-22f96a1a-5569-4c91-ae9d-2e948b923850.png)
+
+4) Orders
+
+This is our orders screen and it will allow users to view the orders that they have created and they will also be able to change their order if they made a mistake or changed their mind. We will also be displaying the amount of time that users will need to wait in order to pick up their drink.
+
+
 
 ## Hosted Application: 
 - The URL of your Heroku Application
 
 
+## Additional Features:
+
+We would like to include a payment option where students will be able to pay using the application instead of going in person. 
 
 ## Team Contributions:
 
@@ -56,7 +84,12 @@ Meghana Jaladanki
 -
 
 Rinija Raja
--
+- Created the endpoints and data objects
+- Wrote up the Milestone2 doc
+- Worked on server
+- Re-formatted menu front-end
+- Re-formatted options front-end
+- Worked on client side for options page
 
 Mehul Ramaswami
 -
