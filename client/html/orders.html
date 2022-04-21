@@ -1,78 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="orders Page"
-    />
-    <title>Payment</title>
-    <link rel="stylesheet" href="../css/orders.css" />
-    <script src="../js/order.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </head>
 
+<head>
+	<meta charset="utf-8" />
+	<meta name="orders Page" />
+	<title>Payment</title>
+	<link rel="stylesheet" href="../css/orders.css" />
+	<script src="../js/order.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
 <body>
-    <div class="navbar">
-      <a id="menu" href="../html/menu.html">Menu</a>
-      <a id="order" href="../html/orders.html">Order</a>
-      <a id="contact" href="../html/contact.html">Contact</a>
-      <a id="logout" href="../html/login.html">Logout</a>
-    </div>
+	<div class="navbar">
+		<a id="menu" href="../html/menu.html">Menu</a>
+		<a id="order" href="../html/orders.html">Order</a>
+		<a id="contact" href="../html/contact.html">Contact</a>
+		<a id="logout" href="../html/login.html">Logout</a>
+	</div>
 
-	  <div class="CartContainer">
-		<div class="Header">
-			<h3 class="Heading">Cart</h3>
-			<h5 class="Action">Remove all</h5>
+	<div style="width: 70vw; margin: 10vh auto">
+		<div class="CartContainer">
+			<div class="Header">
+				<h3 class="Heading">Cart</h3>
+				<h5 class="Action">Remove all</h5>
+			</div>
+
+			<div class="Cart-Items">
+
+				<div class="about">
+					<h1 class="title">Hot Chocolate</h1>
+					<h3 class="subtitle">12oz.</h3>
+				</div>
+				<div class="counter">
+					<div class="btn" id="+1">+</div>
+					<div class="count" id="count1">1</div>
+					<div class="btn" id="-1">-</div>
+				</div>
+				<div class="prices">
+					<div class="amount" id="amt1">3.50</div>
+					<div class="save"><u>Save for later</u></div>
+					<div class="remove"><u>Remove</u></div>
+				</div>
+			</div>
+
+			<div class="Cart-Items pad">
+				<div class="about">
+					<h1 class="title">Latte</h1>
+					<h3 class="subtitle">16oz.</h3>
+				</div>
+				<div class="counter">
+					<div class="btn" id="+2">+</div>
+					<div class="count" id="count2">1</div>
+					<div class="btn" id="-2">-</div>
+				</div>
+				<div class="prices">
+					<div class="amount" id="amt2">4.00</div>
+					<div class="save"><u>Save for later</u></div>
+					<div class="remove"><u>Remove</u></div>
+				</div>
+			</div>
 		</div>
-
-		<div class="Cart-Items">
-
-			  <div class="about">
-				  <h1 class="title">Hot Chocolate</h1>
-				  <h3 class="subtitle">12oz.</h3>
-			  </div>
-			  <div class="counter">
-				  <div class="btn" id="+1">+</div>
-				  <div class="count" id="count1">1</div>
-				  <div class="btn" id="-1">-</div>
-			  </div>
-			  <div class="prices">
-				  <div class="amount" id="amt1">3.50</div>
-				  <div class="save"><u>Save for later</u></div>
-				  <div class="remove"><u>Remove</u></div>
-			  </div>
+		<div class="new-item"></div>
+		<hr>
+		<div class="checkout">
+			<div class="total">
+				<div>
+					<div class="Subtotal">Sub-Total</div>
+					<div class="items">2 items</div>
+				</div>
+				<div class="total-amount" id="total_amt">7.50</div>
+			</div>
+			<a href="../html/payment.html">
+				<button class="button" id="payment">Proceed to Payment</button>
 		</div>
-
-		<div class="Cart-Items pad">
-			  <div class="about">
-				  <h1 class="title">Latte</h1>
-				  <h3 class="subtitle">16oz.</h3>
-			  </div>
-			  <div class="counter">
-				  <div class="btn" id="+2">+</div>
-				  <div class="count" id="count2">1</div>
-				  <div class="btn" id="-2">-</div>
-			  </div>
-			  <div class="prices">
-				  <div class="amount" id="amt2">4.00</div>
-				  <div class="save"><u>Save for later</u></div>
-				  <div class="remove"><u>Remove</u></div>
-			  </div>
-		</div>
-    <div class = "new-item"></div>
-	  <hr>
-	  <div class="checkout">
-	  <div class="total">
-		  <div>
-			  <div class="Subtotal">Sub-Total</div>
-			  <div class="items">2 items</div>
-		  </div>
-		  <div class="total-amount" id="total_amt">7.50</div>
-	  </div>
-    <a href="../html/payment.html">
-      <button class="button" id="payment">Proceed to Payment</button></div>
-    </a>
- </div>
+		</a>
+	</div>
 
 </body>

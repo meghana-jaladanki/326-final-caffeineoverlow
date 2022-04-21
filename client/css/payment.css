@@ -110,19 +110,22 @@
     background-color: #45a049;
   }
 
-  
+  * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
   .button{
     margin-top: 10px;
-    width: 100%;
+    width: 15%;
     height: 40px;
     border: none;
-    background: linear-gradient(to bottom right, #a445b2, #c877d4);
-    border-radius: 20px;
+    background: linear-gradient(to bottom right, #a445b2, #7b5681);
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 16px;
-    font-family: 'Open Sans';
+    font-size: 20px;
     font-weight: 600;
     color: #fffbfb;
+    float: right;
   }
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
   @media (max-width: 800px) {

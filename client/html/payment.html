@@ -1,76 +1,73 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="Payment Page"
-    />
-    <title>Payment</title>
-    <link rel="stylesheet" href="../css/payment.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </head>
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="Payment Page" />
+  <title>Payment</title>
+  <link rel="stylesheet" href="../css/payment.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
 <body>
-    <div class="navbar">
-        <a id="account">Account</a>
-        <a id="menu">Menu</a>
-        <a id="cart">Cart</a>
-        <a id="orderStatus">Order Status</a>
-      </div>
+  <div class="navbar">
+    <a id="menu" href="../html/menu.html">Menu</a>
+    <a id="order" href="../html/orders.html">Order</a>
+    <a id="contact" href="../html/contact.html">Contact</a>
+    <a id="logout" href="" onclick="logoutUser()">Logout</a>
+  </div>
 
-    <div class="row">
-        <div class="col-75">
-          <div class="container">
-            <form action="/action_page.php">
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form action="/action_page.php">
 
-                <div class="col-50">
-                  <h3>Payment</h3>
-                  <div class="icon-container">
-                    <i class="fa fa-cc-visa" style="color:navy;"></i>
-                    <i class="fa fa-cc-amex" style="color:blue;"></i>
-                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                    <i class="fa fa-cc-discover" style="color:orange;"></i>
-                  </div>
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="cname">Card Holder Name </label>
-                      <input type="text" id="cname" name="cardname" placeholder="Name on credit card">
-                    </div>
-                  </div>
+          <div class="col-50">
+            <h3>Payment</h3>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <label for="cname">Card Holder Name </label>
+                <input type="text" id="cname" name="cardname" placeholder="Name on credit card">
+              </div>
+            </div>
 
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="ccnum">Credit card number</label>
-                      <input type="text" id="ccnum" name="cardnumber" placeholder="0000-0000-0000-0000">
-                    </div>
-                  </div>
+            <div class="row">
+              <div class="col-50">
+                <label for="ccnum">Credit card number</label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="0000-0000-0000-0000">
+              </div>
+            </div>
 
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="expmonth">Exp Month</label>
-                      <input type="text" id="expmonth" name="expmonth" placeholder="Month">
-                    </div>
-                  </div>
+            <div class="row">
+              <div class="col-50">
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="Month">
+              </div>
+            </div>
 
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="expyear">Exp Year</label>
-                      <input type="text" id="expyear" name="expyear" placeholder="Year">
-                    </div>
-                    <div class="col-50">
-                      <label for="cvv">CVV</label>
-                      <input type="text" id="cvv" name="cvv" placeholder="CVV">
-                    </div>
-                  </div>
-                </div>
-              </form>
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="Year">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV">
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
-      <button class="button">Place Order</button></div>
-   </div>
+    </div>
+  </div>
+  </div>
+  <button class="button">Place Order</button></div>
+  </div>
 
 </body>
