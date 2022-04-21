@@ -71,7 +71,8 @@ This is our orders screen and it will allow users to view the orders that they h
 <img width="1428" alt="Screen Shot 2022-04-20 at 9 39 51 PM" src="https://user-images.githubusercontent.com/43730457/164354623-286fa7e6-633c-4f38-9dff-e697e94ea960.png">
 
 ## Hosted Application: 
-- The URL of your Heroku Application
+
+We tried to add the heroku url, but we were having challenges connecting the Github repo to the app. 
 
 
 ## Additional Features:
