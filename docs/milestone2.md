@@ -65,12 +65,10 @@ This is our options screen and it will allow users to select the additional thin
 ![image](https://user-images.githubusercontent.com/73535868/164343737-22f96a1a-5569-4c91-ae9d-2e948b923850.png)
 
 Orders:
-<img width="1428" alt="Screen Shot 2022-04-20 at 9 39 51 PM" src="https://user-images.githubusercontent.com/43730457/164354623-286fa7e6-633c-4f38-9dff-e697e94ea960.png">
-
 
 This is our orders screen and it will allow users to view the orders that they have created and they will also be able to change their order if they made a mistake or changed their mind. We will also be displaying the amount of time that users will need to wait in order to pick up their drink.
 
-
+<img width="1428" alt="Screen Shot 2022-04-20 at 9 39 51 PM" src="https://user-images.githubusercontent.com/43730457/164354623-286fa7e6-633c-4f38-9dff-e697e94ea960.png">
 
 ## Hosted Application: 
 - The URL of your Heroku Application
