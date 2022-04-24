@@ -72,7 +72,7 @@ This is our orders screen and it will allow users to view the orders that they h
 
 ## Hosted Application: 
 
-We tried to add the heroku url, but we were having challenges connecting the Github repo to the app. 
+https://git.heroku.com/caffeine-overflow.git
 
 
 ## Additional Features:
