@@ -4,7 +4,7 @@ let fs = require("fs");
 const path = require("path");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 // NEW: Add json and urlencoded middleware
 app.use(express.json());
