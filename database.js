@@ -18,28 +18,30 @@ export class CaffeineDatabase {
         this.client = await this.pool.connect();
 
         // init the database
-        // await this.init_customer();
-        // await this.init_order();
+        await this.init_customer();
+        //await this.init_order();
     }
 
-    // // used to initialize customer table in database
-    // async init_customer() {
-    //     const queryText = `
-    //     create table if not exists customer (
-    //         customer_id integer primary key,
-    //         username varchar(30),
-    //         password varchar(30)
-    //     );
+    // used to initialize customer table in database
+    async init_customer() {
+        const queryText = `
+        create table if not exists customer (
+            customer_id integer primary key,
+            username varchar(30),
+            password varchar(30)
+        );
       
-    //     insert into 
-    //         customer(customer_id, username, password) 
-    //     values 
-    //         (2, 'Sally', 'Test1234!');
-    //     `;
-    //     const res = await this.client.query(queryText);
-    // }
+        insert into 
+            customer(customer_id, username, password) 
+        values 
+            (6, 'Grey', 'Test1234!'),
+            (7, 'Sydney', 'Test1234!'),
+            (8, 'Tarik', 'Test1234!');
+        `;
+        const res = await this.client.query(queryText);
+    }
 
-    // used to initialize order table in database
+    //used to initialize order table in database
     // async init_order() {
     //     const queryText = `
     //     create table if not exists order (
@@ -55,7 +57,9 @@ export class CaffeineDatabase {
     //     insert into 
     //         order(order_id, drink, dairy, espresso, flavor, sweetener, total) 
     //     values 
-    //         (11, 'Latte', 'Milk', '1', 'Vanilla', 'Sugar', 5);
+    //         (12, 'Latte', 'Milk', '1', 'Vanilla', 'Sugar', 5),
+    //         (13, 'Latte', 'Milk', '1', 'Vanilla', 'Sugar', 5),
+    //         (14, 'Latte', 'Milk', '1', 'Vanilla', 'Sugar', 5);
     //     `;
     //     const res = await this.client.query(queryText);
     // }
