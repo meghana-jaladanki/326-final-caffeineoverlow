@@ -57,4 +57,4 @@ Rinija Raja
 - Worked on options.js and orders.js to display the data and save data retrieved from the users
 
 Mehul Ramaswami
-- 
+- Worked on database and tried to get Postgres integration working
