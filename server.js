@@ -1,15 +1,18 @@
 import express from "express";
+import bodyParser from "body-parser";
 import { CaffeineDatabase } from "./database.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import path from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
 class CaffeineServer {
   constructor(dburl) {
     this.dburl = dburl;
     this.app = express();
     this.app.use("/", express.static("client"));
+    this.app.use(bodyParser.json());
   }
 
   async initRoutes() {
@@ -19,31 +22,31 @@ class CaffeineServer {
     this.app.get("/", (req, res) => {
       res.sendFile(path.join(__dirname + "/client/html/login.html"));
     });
-    
+
     this.app.get("/menu", (req, res) => {
       res.sendFile(path.join(__dirname + "/client/html/menu.html"));
     });
-    
+
     this.app.get("/orders", (req, res) => {
       res.sendFile(path.join(__dirname + "/client/html/orders.html"));
     });
-    
+
     this.app.get("/options", (req, res) => {
       res.sendFile(path.join(__dirname + "/client/html/options.html"));
     });
-    
-    this.app.get("/viewCustomer", async (req, res) => {
+
+    this.app.get("/viewCustomers", async (req, res) => {
       try {
-        const customer = await self.db.readCustomer();
+        const customer = await self.db.readCustomers();
         res.send(JSON.stringify(customer));
       } catch (err) {
         res.status(500).send(err);
       }
     });
 
-    this.app.get("/viewOrder", async (req, res) => {
+    this.app.get("/viewOrders", async (req, res) => {
       try {
-        const order = await self.db.readOrder();
+        const order = await self.db.readOrders();
         res.send(JSON.stringify(order));
       } catch (err) {
         res.status(500).send(err);
@@ -71,8 +74,8 @@ class CaffeineServer {
     // CREATE/POST endpoints
     this.app.post("/newCustomer", async (req, res) => {
       try {
-        const { customer_id, username, password } = req.query;
-        const customer = await self.db.createCustomer(customer_id, username, password);
+        const { username, password } = req.query;
+        const customer = await self.db.createCustomer(username, password);
         res.send(JSON.stringify(customer));
       } catch (err) {
         res.status(500).send(err);
@@ -81,14 +84,29 @@ class CaffeineServer {
 
     this.app.post("/newOrder", async (req, res) => {
       try {
-        const { order_id, drink, dairy, espresso, flavor, sweetener, total } = req.query;
-        const order = await self.db.createOrder(order_id, drink, dairy, espresso, flavor, sweetener, total);
+        const {
+          customer_id,
+          drink,
+          dairy,
+          espresso,
+          flavor,
+          sweetener,
+          total,
+        } = req.body;
+        const order = await self.db.createOrder(
+          customer_id,
+          drink,
+          dairy,
+          espresso,
+          flavor,
+          sweetener,
+          total
+        );
         res.send(JSON.stringify(order));
       } catch (err) {
         res.status(500).send(err);
       }
     });
-
   }
 
   async initDb() {
