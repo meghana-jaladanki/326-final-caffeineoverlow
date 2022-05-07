@@ -20,6 +20,26 @@ Mehul Ramaswami : Mehul1107
 
 ## User Interface:
 
+Login: 
+
+This is our application’s login screen, where users also have the option to sign up if they do not have an account yet. Once users sign in, they can proceed to place their order. We will be creating the user object here and we will be saving their email and password in order to create an account for them. 
+
+Menu:
+
+This menu screen displays the different drink options that users can choose from. Each drink option includes an image, price, description, and order button. Once the user clicks the order button, then will be directed to the options page where they can specify their order. 
+
+Options: 
+
+This is our options screen and it will allow users to select the additional things that they would like to add to their drink. They can select their dairy, espresso shots, flavor shots, and sweetener. Once a user specifies these values, a drink object will be populated with the specifications. The user will then be able to place an order with the drink they created. 
+
+Orders:
+
+This is our orders screen and it will allow users to view the orders that they have created and they will also be able to change their order if they made a mistake or changed their mind. We will also be displaying the amount of time that users will need to wait in order to pick up their drink.
+
+## Hosted Application: 
+
+## Video Link:
+
 ## APIs:
 
 | Endpoint     | Description |
