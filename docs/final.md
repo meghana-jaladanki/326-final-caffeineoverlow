@@ -57,51 +57,49 @@ https://www.youtube.com/watch?v=3xBu0LMwg_M&list=PLr94vpzaMmB_PYPBsHuy7ahXj2oSWw
 
 | Endpoint     | Description |
 |--------------|-----------  |
-| /newCustomer  | Allows for a new customer to be created with a username, password, and customer_id     |
-| /newOrder  | Allows a new order to be created with an order_id, drink, dairy, espresso, flavor, sweetener, total, order_qual    |
-| /viewCustomer:customer_id | A view endpoint that returns the customer information given a customer_id     |
-| /viewOrder:order_id  | A view endpoint that returns the order information given a order_id  |
+| /newCustomer  | Allows for a new customer to be created with a customer_id and email     |
+| /newOrder  | Allows a new order to be created with an order_id, drink, dairy, espresso, flavor, sweetener, total, c_id    |
+| /viewCustomers | A view endpoint that returns the customer information given a customer_id     |
+| /viewOrders  | A view endpoint that returns the order information given a order_id  |
 | /login | Allows users to login to the application  |
 | /logout  |  Allows users to login out of the application  |
-| /updateOrder:order_id  | Will allow users to update their order and change their specifications  |
-| /deleteCustomer:customer_id  | Will delete a customer when the customer_id is provided  |
-| /deleteOrder:order_id  | Will delete an order when the order_id is provided  |
+| /updateOrder  | Will allow users to update their order and change their specifications  |
+| /deleteCustomer  | Will delete a customer when the customer_id is provided  |
+| /deleteOrder  | Will delete an order when the order_id is provided  |
 
 ## Database:
 
 Tables
 
-TABLE customer(
+TABLE customers(
 
-	customer_id integer primary key,
-	username varchar(30), 
-	password varchar(30)
+	 customer_id SERIAL primary key,
+         email varchar(30)
     
 );
 
-TABLE order(
+TABLE orders(
 
-	order_id integer,
-	drink varchar(30),
-	dairy varchar(30),
-	espresso varchar(30), 
-	flavor varchar(30),
-	sweetener varchar(30),
-	total integer,
-	order_qual integer primary key,
-	foreign key (order_id) references customer (customer_id)
+	 order_id SERIAL primary key,
+         c_id integer,
+         drink varchar(30),
+         dairy varchar(30),
+         espresso varchar(30),
+         flavor varchar(30),
+         sweetener varchar(30),
+         total numeric,
+         foreign key (c_id) references customers(customer_id)
 
 );
 
-Customer Table
+Customers Table
 
 | Column       | Data Type | Description              |
 |--------------|-----------|--------------------------|
 | customer_id  | integer    | The unique id for each customer  |
-| username     | varchar(30)   | The username for the customer account |
-| password     | varchar(30)   | The password for the customer account |
+| email    | varchar(30)   | The email for the customer account |
 
-Order Table
+Orders Table
 
 | Column       | Data Type | Description              |
 |--------------|-----------|--------------------------|
@@ -112,7 +110,7 @@ Order Table
 | flavor     | varchar(30)   | The flavor shot selected |
 | sweetener     | varchar(30)   | The sweetener selected |
 | total    | integer  | The total price for the order |
-| order_qual    | integer  | The unique order qualification number|
+| c_id    | integer  | The customer_id of the order|
 
 
 ## Mappings:
