@@ -46,7 +46,9 @@ Orders Table
 ## Team Contributions:
 
 Meghana Jaladanki
-- 
+- Worked on orders.html & orders.css files 
+- Created login/signup pages 
+- Deployed project onto heroku 
 
 Rinija Raja
 - Created the postgres database and connected it to the Heroku app
