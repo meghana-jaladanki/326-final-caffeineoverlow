@@ -2,37 +2,35 @@
 
 Tables
 
-TABLE customer(
+TABLE customers(
 
-	customer_id integer primary key,
-	username varchar(30), 
-	password varchar(30)
+	 customer_id SERIAL primary key,
+         email varchar(30)
     
 );
 
-TABLE order(
+TABLE orders(
 
-	order_id integer,
-	drink varchar(30),
-	dairy varchar(30),
-	espresso varchar(30), 
-	flavor varchar(30),
-	sweetener varchar(30),
-	total integer,
-	order_qual integer primary key,
-	foreign key (order_id) references customer (customer_id)
+	 order_id SERIAL primary key,
+         c_id integer,
+         drink varchar(30),
+         dairy varchar(30),
+         espresso varchar(30),
+         flavor varchar(30),
+         sweetener varchar(30),
+         total numeric,
+         foreign key (c_id) references customers(customer_id)
 
 );
 
-Customer Table
+Customers Table
 
 | Column       | Data Type | Description              |
 |--------------|-----------|--------------------------|
 | customer_id  | integer    | The unique id for each customer  |
-| username     | varchar(30)   | The username for the customer account |
-| password     | varchar(30)   | The password for the customer account |
+| email    | varchar(30)   | The email for the customer account |
 
-Order Table
+Orders Table
 
 | Column       | Data Type | Description              |
 |--------------|-----------|--------------------------|
@@ -43,7 +41,7 @@ Order Table
 | flavor     | varchar(30)   | The flavor shot selected |
 | sweetener     | varchar(30)   | The sweetener selected |
 | total    | integer  | The total price for the order |
-| order_qual    | integer  | The unique order qualification number|
+| c_id    | integer  | The customer_id of the order|
 
 ## Team Contributions:
 
