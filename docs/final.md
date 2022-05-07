@@ -1,8 +1,8 @@
 ## Team Name:
-Caffeine Overflow
+The Caffinators 
 
 ## Web Application Name:
-Procrastination Station
+Caffeine Overflow 
 
 ## Semester: 
 Spring 2022
