@@ -5,7 +5,6 @@ body {
     --color-error: #cc3333;
     --color-success: #7f0095;
     --border-radius: 4px;
-
     margin: 0;
     height: 100vh;
     display: flex;
@@ -38,7 +37,6 @@ body {
 .card-title{
     text-align: center;
     color:#ffff;
-
 }
 
 .btn {
@@ -52,4 +50,3 @@ body {
     cursor: pointer;
     text-align: center;
 }
-
