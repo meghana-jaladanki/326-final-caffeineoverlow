@@ -98,7 +98,12 @@ In order to place an order, we had users authenticated using their Google accoun
 ## Division of Labor:
 
 Meghana Jaladanki
-- 
+- Created google sign-in for login page 
+- Created authorization crendentials to access Google API
+- Worked on client side for orders page 
+- Worked on navbar displaying menu, orders, and login
+- Deployed project onto Heroku 
+- Worked on documentation section for Authentication/Authorization 
 
 Rinija Raja
 - Worked on client side and sever side for the options page
