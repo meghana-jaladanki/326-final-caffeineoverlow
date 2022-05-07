@@ -37,13 +37,13 @@ Order Table
 | Column       | Data Type | Description              |
 |--------------|-----------|--------------------------|
 | order_id  | integer    | The unique id for each order |
-| drink     | varchar(30)   | The username for the customer account |
-| dairy     | varchar(30)   | The password for the customer account |
-| espresso     | varchar(30)   | The username for the customer account |
-| flavor     | varchar(30)   | The password for the customer account |
-| sweetener     | varchar(30)   | The username for the customer account |
-| total    | integer  | The password for the customer account |
-| order_qual    | integer  | The for the customer account |
+| drink     | varchar(30)   | The drink type selected |
+| dairy     | varchar(30)   | The dairy option selected  |
+| espresso     | varchar(30)   | The number of espresso shots selected |
+| flavor     | varchar(30)   | The flavor shot selected |
+| sweetener     | varchar(30)   | The sweetener selected |
+| total    | integer  | The total price for the order |
+| order_qual    | integer  | The unique order qualification number|
 
 ## Team Contributions:
 
