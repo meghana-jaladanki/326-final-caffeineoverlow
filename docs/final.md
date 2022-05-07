@@ -51,6 +51,7 @@ This is our orders screen and it will allow users to view the orders that they h
 ## Hosted Application: 
 
 ## Video Link:
+https://www.youtube.com/watch?v=3xBu0LMwg_M&list=PLr94vpzaMmB_PYPBsHuy7ahXj2oSWwVZI&index=1
 
 ## APIs:
 
@@ -148,6 +149,10 @@ Rinija Raja
 - Worked on documentation sections (api, database, and mappings) 
 
 Mehul Ramaswami
-- 
+- Worked on the database, and tried to get Postgres integration working
+- Worked on and edited documentation sections
+- Edited Team Video
+- Uploaded Team Video to Youtube and added to the playlist
+- Created release for project
 
 ## Conclusion:
