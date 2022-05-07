@@ -18,8 +18,8 @@ export class CaffeineDatabase {
     this.client = await this.pool.connect();
 
     // init the database
-    // await this.init_customer();
-    // await this.init_order();
+    await this.init_customer();
+    //await this.init_order();
   }
 
   // used to initialize customer table in database
@@ -27,15 +27,14 @@ export class CaffeineDatabase {
     const queryText = `
       create table if not exists customers (
           customer_id SERIAL primary key,
-          username varchar(30),
-          password varchar(30)
+          email varchar(30)
       );
 
-      insert into customers(username, password)
+      insert into customers(email)
       values
-          ('Grey', 'Test1234!'),
-          ('Sydney', 'Test1234!'),
-          ('Tarik', 'Test1234!');
+          ('hello@gmail.com'),
+          ('crazy@gmail.com'),
+          ('happy@gmail.com');
       `;
     const res = await this.client.query(queryText);
   }
@@ -59,8 +58,8 @@ export class CaffeineDatabase {
           orders (c_id, drink, dairy, espresso, flavor, sweetener, total)
       values
           (1, 'Latte', 'Milk', '1', 'Vanilla', 'Sugar', 5),
-          (1, 'Latte', 'Milk', '1', 'Vanilla', 'Sugar', 5),
-          (2, 'Latte', 'Milk', '1', 'Vanilla', 'Sugar', 5);
+          (2, 'Latte', 'Milk', '1', 'Vanilla', 'Sugar', 5),
+          (3, 'Latte', 'Milk', '1', 'Vanilla', 'Sugar', 5);
       `;
     const res = await this.client.query(queryText);
   }
@@ -72,13 +71,12 @@ export class CaffeineDatabase {
   }
 
   // CREATE/POST newCustomer
-  async createCustomer(customer_id, username, password) {
+  async createCustomer(email) {
     const queryText =
-      "INSERT INTO customers (username, password) VALUES ($1, $2) RETURNING customer_id;";
+      "INSERT INTO customers (email) VALUES ($1) RETURNING customer_id;";
     const res = await this.client.query(queryText, [
-      customer_id,
-      username,
-      password,
+        customer_id,
+        email,
     ]);
     return res.rows;
   }

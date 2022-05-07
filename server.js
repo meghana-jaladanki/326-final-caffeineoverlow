@@ -74,8 +74,8 @@ class CaffeineServer {
     // CREATE/POST endpoints
     this.app.post("/newCustomer", async (req, res) => {
       try {
-        const { username, password } = req.query;
-        const customer = await self.db.createCustomer(username, password);
+        const { email } = req.query;
+        const customer = await self.db.createCustomer(email);
         res.send(JSON.stringify(customer));
       } catch (err) {
         res.status(500).send(err);
