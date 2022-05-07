@@ -3,12 +3,15 @@
 Tables
 
 TABLE customer(
+
 	customer_id integer primary key,
 	username varchar(30), 
 	password varchar(30)
+    
 );
 
 TABLE order(
+
 	order_id integer,
 	drink varchar(30),
 	dairy varchar(30),
