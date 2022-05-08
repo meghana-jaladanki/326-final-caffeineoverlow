@@ -12,23 +12,24 @@ document.getElementById('place-order-btn').addEventListener('click', () => {
     flavors = getFlavors();
 });
 
+// retrieving data from each checkbox section
 function getDairy() {
     dairy = $('#dairy input[type=checkbox]');
 }
 
 function getEspresso() {
-    espresso = $('#dairy input[type=checkbox]');
+    espresso = $('#espresso input[type=checkbox]');
 }
 
 function getSweeteners() {
-    sweeteners = $('#dairy input[type=checkbox]');
+    sweeteners = $('#sweetener input[type=checkbox]');
 }
 
 function getFlavors() {
-    flavors = $('#dairy input[type=checkbox]');
+    flavors = $('#flavor input[type=checkbox]');
 }
 
-function postOrder(){
+async function postOrder(){
     let order = {
         "dairy": dairy,
         "espresso": espresso,
