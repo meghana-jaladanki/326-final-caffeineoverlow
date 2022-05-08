@@ -148,7 +148,7 @@ Rinija Raja
 
 Mehul Ramaswami
 - Worked on the database, and tried to get Postgres integration working
-- Worked on and edited documentation sections
+- Worked on and edited documentation sections (including conclusion)
 - Edited Team Video
 - Uploaded Team Video to Youtube and added to the playlist
 - Created release for project
