@@ -58,3 +58,4 @@ Rinija Raja
 
 Mehul Ramaswami
 - Worked on database and tried to get Postgres integration working
+- Edited and uploaded the team video
