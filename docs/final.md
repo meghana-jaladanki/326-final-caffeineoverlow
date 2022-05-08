@@ -137,7 +137,7 @@ Meghana Jaladanki
 - Worked on documentation section for Authentication/Authorization 
 
 Rinija Raja
-- Worked on client side and sever side for the options page
+- Worked on client side and server side for the options page
 - Worked on client side for the menu page
 - Created and implemented the endpoints
 - Created the postgres database and connected it to the Heroku app
@@ -154,3 +154,6 @@ Mehul Ramaswami
 - Created release for project
 
 ## Conclusion:
+This experience working on Caffeine Overflow was very interesting and enjoyable for all of us. Starting up from Milestone 0, we got some great real-world experience on how to design a web-app from scratch. Through the many weeks, starting from the basics such as creating webpages, we learned how to integrate them, connect APIs, construct the client and server sides of the app, and connect the app to a database.
+A couple of things that we found challenging were initially deploying the app to Heroku, and being able to set up a database connection using Postgres to send and retrieve between different pages on our app. Since these were particularly challenging for us, it might have helped us a bit more if we could know a bit more about them even earlier than Milestone 3.
+
