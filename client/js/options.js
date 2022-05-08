@@ -1,78 +1,51 @@
 "use strict";
 
-let dairy = "";
-let espresso = "";
+let dairy = [];
+let espresso = [];
 let sweeteners = [];
 let flavors = [];
 
-window.addEventListener("load", async function () {
+document.getElementById('place-order-btn').addEventListener('click', () => {
     dairy = getDairy();
-    //espresso = getEspress();
-    //sweeteners = getSweeteners();
-    //flavors = getFlavors();
+    espresso = getEspress();
+    sweeteners = getSweeteners();
+    flavors = getFlavors();
 });
 
 function getDairy() {
-    return "";
+    dairy = $('#dairy input[type=checkbox]');
 }
 
-// function getEspresso() {
+function getEspresso() {
+    espresso = $('#dairy input[type=checkbox]');
+}
 
-// }
+function getSweeteners() {
+    sweeteners = $('#dairy input[type=checkbox]');
+}
 
-// function getSweeteners() {
+function getFlavors() {
+    flavors = $('#dairy input[type=checkbox]');
+}
 
-// }
+function postOrder(){
+    let order = {
+        "dairy": dairy,
+        "espresso": espresso,
+        "sweeteners": sweeteners,
+        "flavors": flavors
+    }
 
-// function getFlavors() {
-
-// }
-
-// function validateOrder(){
-
-// }
-
-// function postOrder(){
-//     let drink = {
-//         "dairy": dairy,
-//         "espresso": espresso,
-//         "sweeteners": sweeteners,
-//         "flavors": flavors
-//     }
-
-//     let userID = localStorage.getItem('userID');
-
-//     let drinkResponse = await fetch("/drink/new", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json;charset=utf-8",
-//         },
-//         body: JSON.stringify(drink),
-//     });
-
-//     if (drinkResponse.ID !== null){
-//         let order = {
-//             "userID": userID,
-//             "drinkID": drinkResponse.drinkID,
-//         }
-//         let orderResponse = await fetch("/orders/new", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json;charset=utf-8",
-//             },
-//             body: JSON.stringify(order),
-//         });
-
-//         if (orderResponse.status === 200) {
-//             window.open("/orders", _self);
-//         } else {
-//             // Diplay error with creating the order in the database
-//         }
-//     } else {
-//         // Display error with creating new drink for user
-//     }
+    let newOrder = await fetch("/newOrder", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(order),
+    });
     
-// }
+}
+
 async function logoutUser() {
   localStorage.clear();
   await fetch("/logout", {

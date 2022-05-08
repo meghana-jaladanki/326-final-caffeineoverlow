@@ -18,7 +18,7 @@ export class CaffeineDatabase {
     this.client = await this.pool.connect();
 
     // init the database
-    await this.init_customer();
+    //await this.init_customer();
     //await this.init_order();
   }
 
@@ -116,6 +116,28 @@ export class CaffeineDatabase {
   async readOrders() {
     const queryText = "SELECT * FROM orders;";
     const res = await this.client.query(queryText);
+    return res.rows;
+  }
+
+  // UPDATE updateOrder
+  async updateOrder(order_id, drink, dairy, espresso, flavor, sweetener) {
+    const queryText =
+      'UPDATE orders SET drink = $2, dairy = $3, espresso = $4, flavor = $5, sweetener = $6 WHERE id = $1 RETURNING *';
+    const res = await this.client.query(queryText, [order_id, drink, dairy, espresso, flavor, sweetener]);
+    return res.rows;
+  }
+
+  // DELETE deleteOrder
+  async deleteOrder(order_id) {
+    const queryText = 'DELETE FROM orders WHERE order_id = $1 RETURNING *';
+    const res = await this.client.query(queryText, [order_id]);
+    return res.rows;
+  }
+
+  // DELETE deleteCustomer
+  async deleteCustomer(customer_id) {
+    const queryText = 'DELETE FROM customers WHERE customer_id = $1 RETURNING *';
+    const res = await this.client.query(queryText, [customer_id]);
     return res.rows;
   }
 }

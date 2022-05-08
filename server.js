@@ -107,6 +107,38 @@ class CaffeineServer {
         res.status(500).send(err);
       }
     });
+
+    // UPDATE endpoints
+    this.app.put('/updateOrder', async (req, res) => {
+      try {
+        const { order_id, drink, dairy, espresso, flavor, sweetener } = req.query;
+        const order = await self.db.updateOrder(order_id, drink, dairy, espresso, flavor, sweetener);
+        res.send(JSON.stringify(order));
+      } catch (err) {
+        res.status(500).send(err);
+      }
+    });
+
+    // DELETE endpoints
+    this.app.delete('/deleteOrder', async (req, res) => {
+      try {
+        const { order_id } = req.query;
+        const order = await self.db.deleteOrder(order_id);
+        res.send(JSON.stringify( order));
+      } catch (err) {
+        res.status(500).send(err);
+      }
+    });
+
+    this.app.delete('/deleteCustomer', async (req, res) => {
+      try {
+        const { customer_id } = req.query;
+        const customer = await self.db.deleteCustomer(customer_id);
+        res.send(JSON.stringify(customer));
+      } catch (err) {
+        res.status(500).send(err);
+      }
+    });
   }
 
   async initDb() {
